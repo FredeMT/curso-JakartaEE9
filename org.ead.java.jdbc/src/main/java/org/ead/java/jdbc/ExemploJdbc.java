@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Date;
 
+import org.ead.java.jdbc.model.Categoria;
 import org.ead.java.jdbc.model.Produto;
 import org.ead.java.jdbc.repository.ProdutoRepository;
 import org.ead.java.jdbc.repository.ProdutoRepositoryImpl;
@@ -24,9 +25,12 @@ public class ExemploJdbc {
 			
 			System.out.println("============= inserir novo produto =============");
 			Produto produto = new Produto();
-            produto.setNome("Teclado mecânico");
-            produto.setPreco(500);
+            produto.setNome("Teclado Red Dragon mecânico");
+            produto.setPreco(700);
             produto.setData_registro(new Date());
+            Categoria categoria = new Categoria();
+            categoria.setId(3L);
+            produto.setCategoria(categoria);
             repositorio.salvar(produto);
             System.out.println("Produto salvo com sucesso!");
             repositorio.listar().forEach(System.out::println);

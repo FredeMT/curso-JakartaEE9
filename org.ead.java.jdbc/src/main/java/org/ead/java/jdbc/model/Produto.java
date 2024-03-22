@@ -8,10 +8,11 @@ public class Produto {
 	private String nome;
 	private Integer preco;
 	private Date data_registro;
+	private Categoria categoria;
 	
 	@Override
 	public String toString() {
-		return id + " | " + nome + " | " + preco + " | " + data_registro ;
+		return id + " | " + nome + " | " + preco + " | " + data_registro  + " | " + categoria.getNome();
 	}
 
 	public Produto() {
@@ -49,5 +50,14 @@ public class Produto {
 	public void setData_registro(Date data_registro) {
 		this.data_registro = data_registro;
 	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+	
 
 }

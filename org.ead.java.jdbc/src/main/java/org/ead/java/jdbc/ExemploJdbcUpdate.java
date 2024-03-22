@@ -3,6 +3,7 @@ package org.ead.java.jdbc;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import org.ead.java.jdbc.model.Categoria;
 import org.ead.java.jdbc.model.Produto;
 import org.ead.java.jdbc.repository.ProdutoRepository;
 import org.ead.java.jdbc.repository.ProdutoRepositoryImpl;
@@ -23,9 +24,12 @@ public class ExemploJdbcUpdate {
 			
 			System.out.println("============= atualizar produto =============");
 			Produto produto = new Produto();
-			produto.setId(3L);
-            produto.setNome("Teclado Razer mecânico");
-            produto.setPreco(700);
+			produto.setId(5L);
+            produto.setNome("Teclado Corsair k95 mecânico");
+            produto.setPreco(650);
+            Categoria categoria = new Categoria();
+            categoria.setId(2L);
+            produto.setCategoria(categoria);
             repositorio.salvar(produto);
             System.out.println("Produto atualizado com sucesso!");
             repositorio.listar().forEach(System.out::println);
